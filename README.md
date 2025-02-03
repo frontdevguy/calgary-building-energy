@@ -35,7 +35,7 @@ def extract_float_from_text(value):
 ```
 
 
-#### 🔹 Clean the POSTAL CODE
+#### 🔹 Cleaning the POSTAL CODE Column
 The Postal code column contained several inconsistencies. To put this in the standard format. We removed all spaces and extracted the first 6 alphanumeric characters. We return the 6 characters in the standard format
 
 ```python
@@ -51,7 +51,7 @@ def extract_postal_code_from_text(value):
     return value
 ```
 
-#### 🔹 Clean the Address One
+#### 🔹 Cleaning the Address One Column
 Some address one columns contain the city and province. We used Regx to remove these values since we have a dedicated columns for them
 
 ```python
@@ -76,7 +76,6 @@ def clean_address_one(value):
 ## Challenges Faced
 ### Lack of Monthly Energy Data
 - The dataset contained only **yearly energy data**, making it **impossible to analyze seasonal variations in energy consumption**.
-- Without **monthly or seasonal breakdowns**, we could not determine how **heating and cooling demands fluctuate throughout the year**.
 
 ### High Null Values in ENERGY STAR Score
 - The **ENERGY STAR Score field contained a significant number of missing values**, making it **unusable for benchmarking energy efficiency**.
@@ -88,4 +87,3 @@ def clean_address_one(value):
 - **Office buildings (1.30 GJ/m²) are more energy-intensive per square meter**, but they have **greater flexibility for energy optimization**.
 - **Energy use and emissions have a strong correlation (0.76)**, reinforcing that **reducing energy consumption directly lowers emissions**.
 - **Larger buildings consume more energy (0.73 correlation), but size alone does not determine efficiency**—smaller buildings can still be highly inefficient.
-- **Seasonal energy variations were difficult to analyze due to yearly data**, but fire stations showed **stable energy use**, while **offices likely fluctuate with temperature demands**.
